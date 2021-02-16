@@ -1,0 +1,53 @@
+@function size($value) {
+  @return $value * $unit;
+}
+
+@mixin reset-pm {
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  .col {
+    width: 50%;
+  }
+  .col-30 {
+    width: 30%;
+  }
+  .col-70 {
+    width: 70%;
+  }
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+@for $i from 1 to $limit {
+  // m-1 m-2 m-3...
+  .m-#{$i} {
+    margin: $i * $unit;
+  }
+}
+
+@for $i from 1 to $limit {
+  // p-1 p-2 p-3...
+  .p-#{$i} {
+    padding: $i * $unit;
+  }
+}
+
+@for $i from 1 to $limit {
+  // py-1 py-2 py-3...
+  .py-#{$i} {
+    padding: $i * $unit 0;
+  }
+}
+
+@for $i from 1 to 4 {
+  .w-#{$i} {
+    width: $i * 25%;
+  }
+}
